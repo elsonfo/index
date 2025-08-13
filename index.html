@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Word Trainer — Gamificação de Formatação</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">📝 Word Trainer</div>
+  <div class="scoreboard">
+    <span>Fase: <strong id="level">1</strong></span>
+    <span>Pontos: <strong id="points">0</strong></span>
+    <span>Tempo: <strong id="time">60</strong>s</span>
+  </div>
+</header>
+
+<main class="layout">
+  <aside class="panel">
+    <h2>Desafio atual</h2>
+    <p id="taskText"></p>
+    <div class="actions">
+      <button id="checkBtn" class="primary">✓ Verificar</button>
+      <button id="hintBtn" class="ghost">💡 Dica (-3)</button>
+      <button id="skipBtn" class="ghost">⏭ Pular (-2)</button>
+      <button id="resetBtn" class="ghost">↺ Reset</button>
+    </div>
+
+    <div class="legend">
+      <h3>Atalhos (no editor)</h3>
+      <ul>
+        <li>Ctrl+B = Negrito</li><li>Ctrl+I = Itálico</li><li>Ctrl+U = Sublinhado</li>
+        <li>Ctrl+L = Esquerda</li><li>Ctrl+E = Centro</li><li>Ctrl+R = Direita</li><li>Ctrl+J = Justificar</li>
+      </ul>
+    </div>
+
+    <div class="board">
+      <h3>Ranking local</h3>
+      <ol id="leaderboard"></ol>
+      <div class="save-score">
+        <input id="playerName" placeholder="Seu nome"/>
+        <button id="saveScore">Salvar pontuação</button>
+      </div>
+    </div>
+  </aside>
+
+  <section class="workspace">
+    <div class="toolbar" aria-label="Barra de ferramentas">
+      <button data-cmd="bold"><b>N</b></button>
+      <button data-cmd="italic"><i>I</i></button>
+      <button data-cmd="underline"><u>S</u></button>
+      <span class="sep"></span>
+      <button data-align="left">⟸</button>
+      <button data-align="center">≡</button>
+      <button data-align="right">⟹</button>
+      <button data-align="justify">⇔</button>
+      <span class="sep"></span>
+      <button data-cmd="insertUnorderedList">• Lista</button>
+      <button data-cmd="insertOrderedList">1. Lista</button>
+      <span class="sep"></span>
+      <label>Fonte
+        <select id="fontFamily">
+          <option value="Arial, Helvetica, sans-serif">Arial</option>
+          <option value="'Times New Roman', Times, serif">Times New Roman</option>
+          <option value="Calibri, sans-serif">Calibri</option>
+          <option value="Verdana, sans-serif">Verdana</option>
+        </select>
+      </label>
+      <label>Tam.
+        <select id="fontSize">
+          <option value="12px">12</option><option value="14px">14</option>
+          <option value="16px">16</option><option value="18px">18</option><option value="20px">20</option>
+        </select>
+      </label>
+      <label>Espaço
+        <select id="lineHeight">
+          <option value="1">1.0</option><option value="1.15">1.15</option><option value="1.5">1.5</option><option value="2">2.0</option>
+        </select>
+      </label>
+      <label>Cor <input type="color" id="fontColor" value="#222222"/></label>
+      <button id="highlightBtn">🖍 Realce</button>
+      <span class="sep"></span>
+      <button id="insertTableBtn">↹ Tabela 2×2</button>
+      <button id="insertImageBtn">🖼 Imagem (URL)</button>
+    </div>
+
+    <div id="doc" class="doc" contenteditable="true">
+      <h1 data-p="1">Memorando — Laboratório de Informática</h1>
+      <p data-p="2">Este é um parágrafo de exemplo. Ajuste a formatação conforme os desafios. Você pode usar a barra de ferramentas ou os atalhos de teclado como faria no Word.</p>
+      <p data-p="3">Outro parágrafo de prática. Altere alinhamento, negrito, itálico, sublinhado, fonte, tamanho e espaçamento quando solicitado.</p>
+      <h2 data-p="4">Seção — Equipamentos</h2>
+      <p data-p="5">Listagem e observações sobre os equipamentos do laboratório. Texto de exemplo para validação de estilo.</p>
+      <p data-p="6">Texto extra para justificar, centralizar ou ajustar cor. Use sua criatividade e leia o desafio com atenção.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">Feito para aulas de Informática — simulação de formatação tipo Word (funciona offline).</footer>
+<script src="app.js" defer></script>
+</body>
+</html>
