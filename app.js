@@ -198,7 +198,7 @@ saveBtn.addEventListener('click',()=>{ const name=(nameInput.value||'Aluno').tri
 function resetDocument(){
   doc.innerHTML=`
     <h1 data-p="1">Memorando — Laboratório de Informática</h1>
-    <p data-p="2">Este é um parágrafo de exemplo. Ajuste a formatação conforme os desafios. Você pode usar a barra de ferramentas ou os atalhos de teclado como faria no Word.</p>
+    <p data-p="2">Este é um parágrafo de exemplo. Ajuste a formatação conforme os desafios. Você pode usar a barra de ferramentas ou os atalhos de teclado como faria no Word. Estou acrescentando essa frase para teste.</p>
     <p data-p="3">Outro parágrafo de prática. Altere alinhamento, negrito, itálico, sublinhado, fonte, tamanho e espaçamento quando solicitado.</p>
     <h2 data-p="4">Seção — Equipamentos</h2>
     <p data-p="5">Listagem e observações sobre os equipamentos do laboratório. Texto de exemplo para validação de estilo.</p>
@@ -206,3 +206,4 @@ function resetDocument(){
 }
 function init(){ resetDocument(); loadChallenge(); startTimer(); loadBoard(); }
 init();
+
